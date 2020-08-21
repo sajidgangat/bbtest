@@ -1,0 +1,62 @@
+
+<!-- <div class="bg">
+  <div style="display: flex">
+    <div style="padding: 5%;">
+      <app-transfer-form (onTransactionAdd)="handleOnTransactionAdd($event)"></app-transfer-form>
+    </div>
+    <div style="padding: 5%;">
+      <app-recent-transaction [transactions]="transactions"></app-recent-transaction>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div class="row">
+  <div class="col-4"><app-transfer-form (onTransactionAdd)="handleOnTransactionAdd($event)"></app-transfer-form></div>
+  <div class="col-8"><app-recent-transaction [transactions]="transactions"></app-recent-transaction></div>
+</div> -->
+<!-- 
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-2">
+      <app-transfer-form (onTransactionAdd)="handleOnTransactionAdd($event)"></app-transfer-form>
+    </div>
+    <div class="col-md-10">
+      <app-recent-transaction [transactions]="transactions"></app-recent-transaction>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container" >
+  <div class="header clearfix" style="padding:5%">
+    <img src="../assets/logo.jpg" />
+  </div>
+
+
+
+  <div class="row" style="padding: 7%;">
+    <div class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Make a Transfer</h3>
+        </div>
+        <div class="panel-body">
+          <app-transfer-form (onTransactionAdd)="handleOnTransactionAdd($event)"></app-transfer-form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Recent Transactions</h3>
+        </div>
+        <div class="panel-body">
+          <app-recent-transaction [transactions]="transactions"></app-recent-transaction>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
