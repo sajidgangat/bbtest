@@ -1,14 +1,17 @@
 <div>
     <!-- <img src="../../assets/icons/briefcase.png" /> Recent Transactions -->
 </div>
-<input type="text" [(ngModel)]="search" (ngModelChange)="onSearch()">
 
-Sort By:
-<!-- <button (click)="onSortByDate()">DATE</button>
-<button (click)="onSortByAccount()">BENEFICIARY</button>
-<button (click)="onSortByAmount()">AMOUNT</button> -->
 
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <input type="text" [(ngModel)]="search" (ngModelChange)="onSearch()">
+
+    Sort By:
+    <button type="button" (click)="onSortByDate()" class="btn btn-outline-secondary">DATE</button>
+    <button type="button" (click)="onSortByAccount()" class="btn btn-outline-secondary">BENEFICIARY</button>
+    <button type="button" (click)="onSortByAmount()" class="btn btn-outline-secondary">AMOUNT</button>
+
+
+<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
     <label class="btn btn-secondary active">
       <input (click)="onSortByDate()" type="radio" name="options" id="option1" autocomplete="off"> DATE
     </label>
@@ -18,26 +21,28 @@ Sort By:
     <label class="btn btn-secondary">
       <input (click)="onSortByAmount()" type="radio" name="options" id="option3" autocomplete="off"> AMOUNT
     </label>
-</div>
+</div> -->
 
 
-
-<table style="background-color: white; padding: 5%;">
+<div class="table-responsive">
+<table class="table table-hover" >
+    
     <tbody>
         <tr *ngFor="let transaction of filteredData">
-            <th style="padding: 2%;">{{transaction.transactionDate | date:'LLL yy'}}</th>
-            <th style="padding: 4%;">
-                <img height="20" width="20" [src]="transaction.merchantLogo" />
-            </th>
-            <th style="padding: 2%;">
-                <div>
+            <td>{{transaction.transactionDate | date:'LLL yy'}}</td>
+            <td>
+                <img height="40" width="40" [src]="transaction.merchantLogo" />
+            </td>
+            <td >
+                <div style="font-weight: bold;">
                     {{transaction.merchant}}
                 </div>
                 <div>
                     {{transaction.transactionType}}
                 </div>
-            </th>
-            <th style="padding: 2%;">${{transaction.amount}}</th>
+            </td>
+            <td style="font-weight: bold;">${{transaction.amount}}</td>
         </tr>
     </tbody>
 </table>
+</div>
